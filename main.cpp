@@ -7,7 +7,7 @@
 using namespace std;
 
 
-void getName(string name){
+void getName(string name ifstream& in, ofstream out){
 	cout << "Enter the name of the recipient: ";
 	cin >> name;
 }
@@ -21,8 +21,22 @@ int main(){
 	
 	
 	
-	getName(n);
+	infile.open("junk.txt");
+	if(infile.fail()){
+		cout << "Failed!\n";
+		exit(1);
+	}
 	
+	outfile.open("p.txt");
+	if(outfile.fail()){
+		cout << "Failed!\n";
+		exit(1);
+	}
+	
+	getName(infile, outfile);
+	
+	infile.close();
+	outfile.close();
 	
 	return 0;
 }

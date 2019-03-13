@@ -9,11 +9,11 @@ using namespace std;
 
 void getName(ifstream& in, ofstream& out){
 	string Name;
-	char[3] read;
+	char read;
 	while(!in.eof()){
 		in.get(read);
 		out.put(read);
-		if (read == '#N#'){
+		if (read == '#'){
 			in.putback(read);
 			cout << "Enter the name of the recipient: ";
 			cin >> Name;

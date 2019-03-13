@@ -7,9 +7,19 @@
 using namespace std;
 
 
-void getName(string name ifstream& in, ofstream out){
-	cout << "Enter the name of the recipient: ";
-	cin >> name;
+void getName(ifstream& in, ofstream& out){
+	string Name;
+	char read;
+	while(!in.eof()){
+		in.get(read);
+		out.put(read);
+		if (read == '#'){
+			in.putback(read);
+			cout << "Enter the name of the recipient: ";
+			cin >> Name;
+			out << Name;
+		}
+	}
 }
 
 int main(){

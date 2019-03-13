@@ -13,7 +13,7 @@ void getName(ifstream& in, ofstream& out){
 	while(!in.eof()){
 		in.get(read);
 		out.put(read);
-		if (read == '#'){
+		if (read == '#N#'){
 			in.putback(read);
 			cout << "Enter the name of the recipient: ";
 			cin >> Name;

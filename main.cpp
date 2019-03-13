@@ -9,7 +9,7 @@ using namespace std;
 
 void getName(ifstream& in, ofstream& out){
 	string Name;
-	char read;
+	char[3] read;
 	while(!in.eof()){
 		in.get(read);
 		out.put(read);
